@@ -82,7 +82,7 @@ The MongoDB clusters are tightly coupled via `mongoose.Schema.Types.ObjectId`, e
 
 ---
 
-## 🚀 Local Installation & Bootstrapping
+##  Local Installation & Bootstrapping
 
 To set up this platform in a sandbox environment locally from scratch, ensure you have **Node 18+** and access to a **MongoDB Atlas Cluster**.
 
