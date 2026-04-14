@@ -30,10 +30,10 @@ const Footer = () => {
               The modern way to manage vehicle maintenance. Book, track, and maintain complete service records — all in one platform.
             </p>
             <div className="footer__social mt-6">
-              <a href="#" className="footer__social-icon" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="footer__social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="footer__social-icon" aria-label="GitHub"><i className="fab fa-github"></i></a>
-              <a href="#" className="footer__social-icon" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://x.com/" className="footer__social-icon" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+              <a href="https://linkedin.com/" className="footer__social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/" className="footer__social-icon" aria-label="GitHub"><i className="fab fa-github"></i></a>
+              <a href="https://instagram.com/" className="footer__social-icon" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ const Footer = () => {
             <h4 className="footer__col-title">Support</h4>
             <ul className="footer__links">
               <li><a href="mailto:support@autocare.com"><i className="fas fa-envelope" style={{marginRight: '8px', opacity: 0.5}}></i>support@autocare.com</a></li>
-              <li><a href="tel:+18001234567"><i className="fas fa-phone" style={{marginRight: '8px', opacity: 0.5}}></i>+1 800 123 4567</a></li>
+              <li><a href="tel:+18001234567"><i className="fas fa-phone" style={{marginRight: '8px', opacity: 0.5}}></i>+91 8008xx9045</a></li>
               <li><a href="#"><i className="fas fa-map-marker-alt" style={{marginRight: '8px', opacity: 0.5}}></i>Andhra Pradesh, Amaravati</a></li>
             </ul>
           </div>
