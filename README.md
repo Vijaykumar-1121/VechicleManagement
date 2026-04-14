@@ -88,8 +88,8 @@ To set up this platform in a sandbox environment locally from scratch, ensure yo
 
 ### 1. Repository Setup
 ```bash
-git clone https://github.com/your-username/autocare-platform.git
-cd autocare-platform
+git clone https://github.com/Vijaykumar-1121/VechicleManagement.git
+cd VechicleManagement
 ```
 
 ### 2. Dual-Environment Install Pipeline
