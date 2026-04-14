@@ -1,0 +1,16 @@
+{
+  "name": "symptomsense",
+  "version": "1.0.0",
+  "description": "SymptomSense - A MERN stack symptom checker and health analysis platform",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "seed": "cd backend && node seeder.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,615 @@
+/* ═══════════════════════════════════════════════════════════
+   Dashboard — Enterprise sidebar + content layout
+   ═══════════════════════════════════════════════════════════ */
+
+.dash {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────── */
+.dash__sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--bg-elevated);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-6);
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+.dash__sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.dash__sidebar-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.dash__sidebar-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.03em;
+}
+
+/* ─── Navigation ──────────────────── */
+.dash__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dash__nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  text-align: left;
+}
+
+.dash__nav-item i {
+  width: 18px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.dash__nav-item:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dash__nav-item--active {
+  color: var(--accent-light);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.dash__nav-item--active i {
+  color: var(--accent-light);
+}
+
+/* ─── User card ───────────────────── */
+.dash__user-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+}
+
+.dash__user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.dash__user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dash__user-info strong {
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Main content ────────────────── */
+.dash__main {
+  flex: 1;
+  padding: var(--space-10);
+  overflow-y: auto;
+}
+
+/* ─── Welcome bar ─────────────────── */
+.dash__welcome {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+/* ─── Metrics ─────────────────────── */
+.dash__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.dash__metric {
+  padding: var(--space-6);
+}
+
+.dash__metric-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.dash__metric-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.dash__metric-icon--blue {
+  background: rgba(37, 99, 235, 0.12);
+  color: #60a5fa;
+}
+
+.dash__metric-icon--amber {
+  background: rgba(217, 119, 6, 0.12);
+  color: #fbbf24;
+}
+
+.dash__metric-icon--green {
+  background: rgba(5, 150, 105, 0.12);
+  color: #34d399;
+}
+
+.dash__metric-icon--purple {
+  background: rgba(124, 58, 237, 0.12);
+  color: #a78bfa;
+}
+
+.dash__metric-value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.dash__metric-label {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+  font-weight: 500;
+}
+
+/* ─── Table ───────────────────────── */
+.dash__table-card {
+  overflow: hidden;
+}
+
+.dash__table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.dash__table-wrap {
+  overflow-x: auto;
+}
+
+.dash__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dash__table th {
+  padding: var(--space-4) var(--space-6);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.dash__table td {
+  padding: var(--space-4) var(--space-6);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+}
+
+.dash__table tbody tr {
+  transition: background var(--duration-fast) ease;
+}
+
+.dash__table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dash__vehicle-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.dash__vehicle-cell strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.dash__vehicle-cell span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.dash__vehicle-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  font-size: 0.8125rem;
+  flex-shrink: 0;
+}
+
+/* ─── Empty state ─────────────────── */
+.dash__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* ─── Responsive ──────────────────── */
+@media screen and (max-width: 1024px) {
+  .dash__metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dash {
+    flex-direction: column;
+  }
+
+  .dash__sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    flex-direction: row;
+    padding: var(--space-4);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dash__sidebar-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    width: 100%;
+  }
+
+  .dash__sidebar-logo {
+    margin-bottom: 0;
+  }
+
+  .dash__nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .dash__nav-item span {
+    display: none;
+  }
+
+  .dash__sidebar-bottom {
+    display: none;
+  }
+
+  .dash__main {
+    padding: var(--space-6);
+  }
+
+  .dash__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .dash__welcome {
+    flex-direction: column;
+  }
+}
+
+/* ─── Premium Receipt Modal ───────────────────────── */
+.receipt-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.receipt-modal {
+  width: 100%;
+  max-width: 550px;
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.receipt-header {
+  padding: var(--space-8);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(3, 7, 18, 0) 100%);
+  border-bottom: 2px dashed rgba(255,255,255,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.receipt-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent-gradient);
+}
+
+.receipt-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.receipt-header__logo {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.4);
+}
+
+.receipt-header__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+
+.receipt-header__subtitle {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.receipt-header__meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.receipt-header__invoice-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-tertiary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.receipt-header__invoice-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  background: rgba(37, 99, 235, 0.15);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+/* Info Section */
+.receipt-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.receipt-info__block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.receipt-info__label {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.receipt-info__value {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.receipt-info__detail {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.receipt-info__block--status {
+  grid-column: 2;
+  align-items: flex-start;
+}
+
+/* Items List */
+.receipt-items {
+  padding: var(--space-6) var(--space-8);
+}
+
+.receipt-items__header {
+  display: grid;
+  grid-template-columns: 40px 1fr 120px;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.receipt-items__row {
+  display: grid;
+  grid-template-columns: 40px 1fr 120px;
+  padding: var(--space-3) 0;
+  align-items: center;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.receipt-items__row:last-child {
+  border-bottom: none;
+}
+
+.receipt-items__num {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.receipt-items__desc {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.receipt-items__cost {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-white);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Totals */
+.receipt-totals {
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, rgba(3, 7, 18, 0.3) 100%);
+  padding: var(--space-6) var(--space-8);
+  border-top: 2px dashed rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.receipt-totals__row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-1) 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.receipt-totals__row--grand {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-white);
+  align-items: center;
+}
+
+.receipt-totals__row--grand .text-gradient {
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.receipt-footer {
+  padding: var(--space-6) var(--space-8);
+  background: var(--bg-base);
+}
+
+.receipt-footer__note {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.receipt-footer__actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.receipt-footer__actions .btn {
+  flex: 1;
+}
